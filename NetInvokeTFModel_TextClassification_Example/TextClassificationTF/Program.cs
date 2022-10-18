@@ -17,9 +17,7 @@ namespace TextClassificationTF2
             //加载模型
             TensorFlowModel tensorFlowModel = mlContext.Model.LoadTensorFlowModel(_modelPath);
 
-            var pipeline = mlContext.Transforms.CopyColumns(outputColumnName: "serving_default_text_vectorization_input", inputColumnName: nameof(MovieReview.ReviewText))
-                .Append(tensorFlowModel.ScoreTensorFlowModel("StatefulPartitionedCall", "serving_default_text_vectorization_input"))
-                .Append(mlContext.Transforms.CopyColumns(nameof(MovieReviewSentimentPrediction.Prediction), "StatefulPartitionedCall")); ;
+            var pipeline = tensorFlowModel.ScoreTensorFlowModel(outputColumnNames: new[] { "StatefulPartitionedCall:0" }, inputColumnNames: new[] { "serving_default_text_vectorization_input:0" }, addBatchDimensionInput: false);
 
             IDataView dataView = mlContext.Data.LoadFromEnumerable(new List<MovieReview>());
             ITransformer model = pipeline.Fit(dataView);
@@ -39,12 +37,14 @@ namespace TextClassificationTF2
     public class MovieReview
     {
         [VectorType(1)]
+        [ColumnName("serving_default_text_vectorization_input:0")]
         public string[] ReviewText { get; set; }
     }
 
     public class MovieReviewSentimentPrediction
     {
         [VectorType(1)]
+        [ColumnName("StatefulPartitionedCall:0")]
         public float[] Prediction { get; set; }
     }
 }

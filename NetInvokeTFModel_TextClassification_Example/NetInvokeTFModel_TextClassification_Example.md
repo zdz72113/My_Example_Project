@@ -29,9 +29,7 @@ MLContext mlContext = new MLContext();
 //加载模型
 TensorFlowModel tensorFlowModel = mlContext.Model.LoadTensorFlowModel(_modelPath);
 
-var pipeline = mlContext.Transforms.CopyColumns(outputColumnName: "serving_default_text_vectorization_input", inputColumnName: nameof(MovieReview.ReviewText))
-    .Append(tensorFlowModel.ScoreTensorFlowModel("StatefulPartitionedCall", "serving_default_text_vectorization_input"))
-    .Append(mlContext.Transforms.CopyColumns(nameof(MovieReviewSentimentPrediction.Prediction), "StatefulPartitionedCall")); ;
+var pipeline = tensorFlowModel.ScoreTensorFlowModel(outputColumnNames: new[] { "StatefulPartitionedCall:0" }, inputColumnNames: new[] { "serving_default_text_vectorization_input:0" }, addBatchDimensionInput: false);
 
 IDataView dataView = mlContext.Data.LoadFromEnumerable(new List<MovieReview>());
 ITransformer model = pipeline.Fit(dataView);

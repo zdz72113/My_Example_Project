@@ -22,5 +22,5 @@ Repository for personal technical exercises and verification
   - ML.Net调用模型
 - [在 ML.NET 中使用 ONNX 检测对象](https://github.com/zdz72113/My_Example_Project/blob/main/NetInvokePreTrainedONNX_ObjectDetection_Example/NetInvokePreTrainedONNX_ObjectDetection_Example.md)
   - ML.Net调用Tiny YOLOv2 模型
-  - [在 ML.NET 中使用 Tensorflow 图片分类](https://github.com/zdz72113/My_Example_Project/blob/main/NetInvokePreTrainedTF_ImageClassification_Example/NetInvokePreTrainedTF_ImageClassification_Example.md)
+- [在 ML.NET 中使用 Tensorflow 图片分类](https://github.com/zdz72113/My_Example_Project/blob/main/NetInvokePreTrainedTF_ImageClassification_Example/NetInvokePreTrainedTF_ImageClassification_Example.md)
   - ML.Net调用预置图片分类模型

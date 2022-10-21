@@ -20,6 +20,10 @@ Repository for personal technical exercises and verification
   - TensorFlow：使用深度神经网络 (DNN) 预测Auto MPG 数据集的燃油效率
   - 模型输入输出查看
   - ML.Net调用模型
+- [.Net服务调用ONNX模型(基于TensorFlo汽车的燃油效率回归模型)](https://github.com/zdz72113/My_Example_Project/blob/main/NetInvokeTFONNX_AutoMPG_Example/NetInvokeONNX_AutoMPG_Example.md)
+  - TensorFlow：使用深度神经网络 (DNN) 预测Auto MPG 数据集的燃油效率
+  - pb模型转换为ONNX模型
+  - ML.Net调用模型
 - [在 ML.NET 中使用 ONNX 检测对象](https://github.com/zdz72113/My_Example_Project/blob/main/NetInvokePreTrainedONNX_ObjectDetection_Example/NetInvokePreTrainedONNX_ObjectDetection_Example.md)
   - ML.Net调用Tiny YOLOv2 模型
 - [在 ML.NET 中使用 Tensorflow 图片分类](https://github.com/zdz72113/My_Example_Project/blob/main/NetInvokePreTrainedTF_ImageClassification_Example/NetInvokePreTrainedTF_ImageClassification_Example.md)

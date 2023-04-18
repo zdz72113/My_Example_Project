@@ -28,3 +28,7 @@ Repository for personal technical exercises and verification
   - ML.Net调用Tiny YOLOv2 模型
 - [在 ML.NET 中使用 Tensorflow 图片分类](https://github.com/zdz72113/My_Example_Project/blob/main/NetInvokePreTrainedTF_ImageClassification_Example/NetInvokePreTrainedTF_ImageClassification_Example.md)
   - ML.Net调用预置图片分类模型
+
+
+### 其他
+- [使用Google OR-Tools分析过去20年中国金融资产最佳配置组合](https://github.com/zdz72113/My_Example_Project/blob/main/FinancialHistoryAnalysis/FinancialHistoryAnalysis_Example.md)
